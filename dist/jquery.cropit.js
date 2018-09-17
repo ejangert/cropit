@@ -666,7 +666,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        type: 'image/png',
 	        quality: 0.75,
 	        originalSize: false,
-	        fillBg: '#fff'
+					fillBg: '#fff',
+					removeTransparency: true
 	      };
 	      exportOptions = _jquery2['default'].extend({}, exportDefaults, exportOptions);
 
@@ -683,7 +684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }).get(0);
 	      var canvasContext = canvas.getContext('2d');
 
-	      if (exportOptions.type === 'image/jpeg') {
+	      if (exportOptions.type === 'image/jpeg' || removeTransparency) {
 	        canvasContext.fillStyle = exportOptions.fillBg;
 	        canvasContext.fillRect(0, 0, canvas.width, canvas.height);
 	      }
