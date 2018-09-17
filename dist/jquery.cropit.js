@@ -684,7 +684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }).get(0);
 	      var canvasContext = canvas.getContext('2d');
 
-	      if (exportOptions.type === 'image/jpeg' || removeTransparency) {
+	      if (exportOptions.type === 'image/jpeg' || exportOptions.removeTransparency) {
 	        canvasContext.fillStyle = exportOptions.fillBg;
 	        canvasContext.fillRect(0, 0, canvas.width, canvas.height);
 	      }
