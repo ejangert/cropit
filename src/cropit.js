@@ -510,6 +510,7 @@ class Cropit {
       quality: 0.75,
       originalSize: false,
       fillBg: '#fff',
+      removeTransparency: true  //Make sure all exported images by default have a white background
     };
     exportOptions = $.extend({}, exportDefaults, exportOptions);
 
@@ -528,7 +529,8 @@ class Cropit {
       .get(0);
     const canvasContext = canvas.getContext('2d');
 
-    if (exportOptions.type === 'image/jpeg') {
+    
+    if (exportOptions.type === 'image/jpeg' || exportOptions.removeTransparency) {
       canvasContext.fillStyle = exportOptions.fillBg;
       canvasContext.fillRect(0, 0, canvas.width, canvas.height);
     }
